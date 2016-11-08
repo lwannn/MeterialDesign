@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.lwapp.luowang.coordinator_toolbar_tab.R;
 import com.lwapp.luowang.coordinator_toolbar_tab.bean.NewsBean;
 
@@ -41,6 +42,13 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         String imgsrc = newsBean.getImgsrc();
         ((MyViewHolder) holder).mTitle.setText(title);
         ((MyViewHolder) holder).mDesgit.setText(digest);
+
+        Glide.with(mContext)
+                .load(imgsrc)
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher)
+                .centerCrop()
+                .into(((MyViewHolder) holder).mIcon);
     }
 
     @Override
@@ -48,7 +56,18 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return mDatas.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
+    //设置回调接口
+    public interface OnItemClickListener {
+        public void OnItemClick(View view, NewsBean bean);
+    }
+
+    private OnItemClickListener myListener;
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        myListener = listener;
+    }
+
+    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView mTitle;
         public TextView mDesgit;
@@ -59,6 +78,13 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             mTitle = (TextView) itemView.findViewById(R.id.tv_title);
             mDesgit = (TextView) itemView.findViewById(R.id.tv_digest);
             mIcon = (ImageView) itemView.findViewById(R.id.iv_icon);
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            myListener.OnItemClick(view, mDatas.get(getAdapterPosition()));
         }
     }
 

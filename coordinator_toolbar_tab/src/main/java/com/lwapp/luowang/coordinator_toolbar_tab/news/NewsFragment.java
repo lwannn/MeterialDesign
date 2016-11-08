@@ -19,7 +19,7 @@ import com.lwapp.luowang.coordinator_toolbar_tab.news.fragment.FragmentFactory;
  */
 public class NewsFragment extends Fragment {
 
-    private String[] Title = new String[]{"热点", "科技", "军事", "娱乐"};
+    private String[] Title = new String[]{"热点", "NBA", "汽车", "娱乐"};
 
     public NewsFragment() {
     }

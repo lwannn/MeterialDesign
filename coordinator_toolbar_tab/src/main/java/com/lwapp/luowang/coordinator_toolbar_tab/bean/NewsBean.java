@@ -1,21 +1,51 @@
 package com.lwapp.luowang.coordinator_toolbar_tab.bean;
 
-/**
- * 新闻的实体类
- * Created by luowang on 2016/10/30.
- */
-public class NewsBean {
-    private String title;//新闻标题
-    private String digest;//小内容
-    private String imgsrc;//图片路径
+import java.io.Serializable;
 
-    public NewsBean() {
+/**
+ * Description : 新闻实体类
+ * Author : lauren
+ * Email  : lauren.liuling@gmail.com
+ * Blog   : http://www.liuling123.com
+ * Date   : 15/12/19
+ */
+public class NewsBean implements Serializable {
+
+    /**
+     * docid
+     */
+    private String docid;
+    /**
+     * 标题
+     */
+    private String title;
+    /**
+     * 小内容
+     */
+    private String digest;
+    /**
+     * 图片地址
+     */
+    private String imgsrc;
+    /**
+     * 来源
+     */
+    private String source;
+    /**
+     * 时间
+     */
+    private String ptime;
+    /**
+     * TAG
+     */
+    private String tag;
+
+    public String getDocid() {
+        return docid;
     }
 
-    public NewsBean(String title, String digest, String imgsrc) {
-        this.title = title;
-        this.digest = digest;
-        this.imgsrc = imgsrc;
+    public void setDocid(String docid) {
+        this.docid = docid;
     }
 
     public String getTitle() {
@@ -40,5 +70,29 @@ public class NewsBean {
 
     public void setImgsrc(String imgsrc) {
         this.imgsrc = imgsrc;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String getPtime() {
+        return ptime;
+    }
+
+    public void setPtime(String ptime) {
+        this.ptime = ptime;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 }

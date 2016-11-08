@@ -17,10 +17,10 @@ public class FragmentFactory {
                     fragment=new HostSpotFragment();
                     break;
                 case 1:
-                    fragment=new ScientistFragment();
+                    fragment=new NbaFragment();
                     break;
                 case 2:
-                    fragment=new MilitaryFragment();
+                    fragment=new CarFragment();
                     break;
                 case 3:
                     fragment=new EntertainmentFragment();

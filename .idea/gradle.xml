@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/coordinator_toolbar_tab" />
             <option value="$PROJECT_DIR$/coordinatorlayout_fab" />
+            <option value="$PROJECT_DIR$/test_glide" />
           </set>
         </option>
         <option name="myModules">
@@ -20,6 +21,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/coordinator_toolbar_tab" />
             <option value="$PROJECT_DIR$/coordinatorlayout_fab" />
+            <option value="$PROJECT_DIR$/test_glide" />
           </set>
         </option>
       </GradleProjectSettings>
